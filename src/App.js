@@ -1,15 +1,16 @@
 import "./App.css";
-// import Texnologi from "./Texnologi";
-import Sunday from "./Sunday";
+import Cont from "./component/cont";
+import Header from "./component/Header";
+import Profile from "./component/Profiles";
 
 const App = () => {
   return (
     <div className="App">
-      {/* <Texnologi /> */}
-      <Sunday />
+      <Header />
+      <Cont />
+      <Profile />
     </div>
   );
 };
 
 export default App;
-  
