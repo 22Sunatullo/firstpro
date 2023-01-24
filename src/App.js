@@ -1,7 +1,7 @@
 import "./App.css";
-import Cont from "./component/cont";
-import Header from "./component/Header";
-import Profile from "./component/Profiles";
+import Cont from "./component/cont/cont";
+import Header from "./component/header/Header";
+import Profile from "./component/Profile/Profiles";
 
 const App = () => {
   return (

@@ -1,0 +1,10 @@
+.right {
+    grid-area: c;
+    background-color: blanchedalmond;
+}
+
+.Impost img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
