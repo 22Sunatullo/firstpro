@@ -1,6 +1,4 @@
-ul li{
-  list-style: none;
-}
+
 
 .App{
   display: grid;
@@ -16,19 +14,4 @@ ul li{
 
 }
 
-header{
-  grid-area: h;
-  background-color: aqua;
-}
-header img{
-  width: 40px;
-}
 
-.left-concat{
-  grid-area: u;
-  background-color: blueviolet;
-}
-.rigth-concat{
-  grid-area: c;
-  background-color: blanchedalmond;
-}

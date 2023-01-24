@@ -1,7 +1,8 @@
+import c from './cont.module.css';
 
 const Cont = () => {
     return (
-        <div className="left-concat">
+        <div className={c.leftconcat}>
             <ul>
                 <li>menu</li>
                 <li>All</li>

@@ -1,0 +1,8 @@
+ul li {
+  list-style: none;
+}
+
+.leftconcat {
+  grid-area: u;
+  background-color: blueviolet;
+}

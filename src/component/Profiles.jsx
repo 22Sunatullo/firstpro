@@ -1,6 +1,7 @@
+import c from './Profile.module.css';
 const Profile = () => {
     return (
-        <div className="rigth-concat">
+        <div className={c.right}>
             <div>
                 <img src="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg" />
             </div>
