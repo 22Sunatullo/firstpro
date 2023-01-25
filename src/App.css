@@ -1,12 +1,10 @@
-
-
-.App{
+.App {
   display: grid;
   width: 1250px;
   margin: 0 auto;
-  grid-template-areas: 
-  "h h"
-  "u c";
+  grid-template-areas:
+    "h h"
+    "u c";
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
@@ -14,4 +12,7 @@
 
 }
 
-
+.app-wrap {
+  grid-area: c;
+  background-color: blanchedalmond;
+}

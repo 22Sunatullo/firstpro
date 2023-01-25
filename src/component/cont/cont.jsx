@@ -4,9 +4,9 @@ const Cont = () => {
     return (
         <div className={c.leftconcat}>
             <ul>
-                <li>menu</li>
-                <li>All</li>
-                <li>nav</li>
+                <li><a href="/Profile">Home</a></li>
+                <li><a href="/Massage">Massage</a></li>
+                <li><a>Menu</a></li>
             </ul>
         </div>
     );

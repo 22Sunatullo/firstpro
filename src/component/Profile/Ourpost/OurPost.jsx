@@ -10,10 +10,8 @@ const OurPost = () => {
                 <button>Remove</button>
 
             </div>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post massage = 'Hi my name Sunatullo' numberLi = '185'/>
+            <Post massage = 'My last name Rajabov' numberLi = '800'/>
         </div>
     );
 };
