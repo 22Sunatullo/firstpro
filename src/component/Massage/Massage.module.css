@@ -1,0 +1,18 @@
+.Message {
+    display: grid;
+    grid-template-columns: 2fr  10fr;
+    padding: 10px ;
+}
+
+/* .massageDialoge {} */
+.massageDialoge ul li {
+    cursor: pointer;
+}
+.massageDialoge ul li:active {
+    color: red;
+    font-size: 17px;
+}
+
+/* .massages {}
+
+.massages .dialog {} */
