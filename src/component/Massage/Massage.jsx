@@ -1,35 +1,40 @@
 import { NavLink } from 'react-router-dom';
+import Item from './Item/Item';
 import d from './Massage.module.css';
+import Messege from './Messege/Messege';
 
-const Item = (props) => {
-    let nameClass = "/Massage/" + props.id;
-    return (
-        <li><NavLink to={nameClass} >{props.name}</NavLink></li>
-    );
-}
-
-const Messege = (props) => {
-    return <div className="dialog">{props.send}</div>;
-}
 
 const Massage = () => {
+
+    let messageData = [
+        { id: 1, name: "Sasha" },
+        { id: 2, name: "Sunatullo" },
+        { id: 3, name: "Umar" },
+        { id: 4, name: "Huseyn" },
+        { id: 5, name: "Kobil" }
+    ]
+    let dialogData = [
+        { id: 1, massage: "Hi" },
+        { id: 2, massage: "My name Sunatullo" },
+        { id: 3, massage: "What is your name?" },
+    ]
+
+    let newMessage = messageData.map(ren => (<Item name={ren.name} id={ren.id} />));
+    let newDialogData = dialogData.map(d => (<Messege send={d.massage} />))
+
     return (
         <div className={d.Message}>
             <div className={d.massageDialoge}>
                 <ul>
-                    <Item name="Sasha" id="1" />
-                    <Item name="Sunatullo" id="2" />
-                    <Item name="Umar" id="3" />
-                    <Item name="Huseyn" id="4" />
-                    <Item name="Kobil" id="5" />
+                    {newMessage}
                 </ul>
             </div>
             <div className={d.massages}>
-                <Messege send='Hi' />
-                <Messege send='My name Sunatullo' />
-                <Messege send='What is your name?' />
+                {newDialogData}
             </div>
+
         </div>
+
     );
 };
 

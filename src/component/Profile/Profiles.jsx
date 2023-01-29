@@ -4,8 +4,8 @@ import Profileinfo from './Profileinfo/Profileinfo';
 const Profile = () => {
     return (
         <div className={s.right}>
-            <Profileinfo/>
-            <OurPost/>
+            <Profileinfo />
+            <OurPost />
         </div>
     );
 };

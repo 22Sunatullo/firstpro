@@ -15,7 +15,7 @@ const App = () => {
         <Cont />
         <div className="app-wrap">
           <Routes>
-            <Route exact path="/Profile" element={<Profile />} />
+            <Route path="/Profile" element={<Profile />} />
             <Route path="/Massage/*" element={<Massage />} />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music/>} />
