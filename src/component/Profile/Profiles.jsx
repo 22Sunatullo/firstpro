@@ -1,11 +1,13 @@
 import OurPost from './Ourpost/OurPost';
 import s from './Profile.module.css';
 import Profileinfo from './Profileinfo/Profileinfo';
-const Profile = () => {
+const Profile = (props) => {
+    
+
     return (
         <div className={s.right}>
-            <Profileinfo />
-            <OurPost />
+            <Profileinfo/>
+            <OurPost post = {props.net}/>
         </div>
     );
 };

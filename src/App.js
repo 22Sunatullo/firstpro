@@ -7,7 +7,8 @@ import Music from "./component/Music/Music";
 import News from "./component/News/News";
 import Profile from "./component/Profile/Profiles";
 
-const App = () => {
+const App = (props) => {
+  debugger;
   return (
     <BrowserRouter>
       <div className="App">
@@ -15,10 +16,11 @@ const App = () => {
         <Cont />
         <div className="app-wrap">
           <Routes>
-            <Route path="/Profile" element={<Profile />} />
-            <Route path="/Massage/*" element={<Massage />} />
+            <Route path="/Profile" element={<Profile net = {props.appServer.postData} />} />
+            <Route path="/Massage/*" element={<Massage messag={props.appServer.messageData} dialog={props.appServer.dialogData} />}
+            />
             <Route path="/News" element={<News />} />
-            <Route path="/Music" element={<Music/>} />
+            <Route path="/Music" element={<Music />} />
           </Routes>
         </div>
       </div>
