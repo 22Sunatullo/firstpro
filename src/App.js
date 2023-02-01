@@ -8,7 +8,6 @@ import News from "./component/News/News";
 import Profile from "./component/Profile/Profiles";
 
 const App = (props) => {
-  debugger;
   return (
     <BrowserRouter>
       <div className="App">
