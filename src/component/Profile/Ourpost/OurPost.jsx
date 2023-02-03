@@ -10,7 +10,7 @@ const OurPost = (props) => {
     let refForbutton = React.createRef();
     const ner = () => {
         let text = refForbutton.current.value;
-        alert(text);
+        props.adpost(text);
     }
     
     return (

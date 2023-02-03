@@ -17,4 +17,14 @@ const Server = {
   ],
 };
 
+export let addPost = (postMassage) => {
+  let newPost = {
+    id: 5,
+    massage: postMassage,
+    numberLi: Math.floor(Math.random() * 2000),
+  };
+
+  Server.postData.push(newPost);
+};
+
 export default Server;

@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Server from "./redux/server";
+import {addPost} from "./redux/server";
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App appServer = {Server} />
+    <App appServer = {Server} adPost = {addPost} />
   </React.StrictMode>
 );
 

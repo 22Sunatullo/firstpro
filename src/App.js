@@ -15,8 +15,18 @@ const App = (props) => {
         <Cont />
         <div className="app-wrap">
           <Routes>
-            <Route path="/Profile" element={<Profile net = {props.appServer.postData} />} />
-            <Route path="/Massage/*" element={<Massage messag={props.appServer.messageData} dialog={props.appServer.dialogData} />}
+            <Route path="/Profile" element={
+                <Profile net={props.appServer.postData} adpost={props.adpost} />
+              }
+            />
+            <Route
+              path="/Massage/*"
+              element={
+                <Massage
+                  messag={props.appServer.messageData}
+                  dialog={props.appServer.dialogData}
+                />
+              }
             />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />
