@@ -1,8 +1,12 @@
+import { renderEdidth } from "../render";
+
 const Server = {
   postData: [
     { id: 1, massage: "Hi my name Sunatullo", numberLi: "185" },
     { id: 2, massage: "My last name Rajabov", numberLi: "800" },
   ],
+
+  
   messageData: [
     { id: 1, name: "Sasha" },
     { id: 2, name: "Sunatullo" },
@@ -25,6 +29,7 @@ export let addPost = (postMassage) => {
   };
 
   Server.postData.push(newPost);
+  renderEdidth();
 };
 
 export default Server;

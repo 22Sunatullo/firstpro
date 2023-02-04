@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <div className={s.right}>
             <Profileinfo/>
-            <OurPost post = {props.net} adpost = {props.adpost}/>
+            <OurPost post = {props.net} ad = {props.Ser}/>
         </div>
     );
 };

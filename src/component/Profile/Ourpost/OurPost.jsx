@@ -4,13 +4,12 @@ import Post from './post/Post';
 
 
 const OurPost = (props) => {
-    let posts = props.post.map(p => (<Post massage={p.massage} numberLi={p.numberLi} />));
-  
-  
+    let posts = props.post.map(p => (<Post massage={p.massage} numberLi={p.numberLi} />));  
     let refForbutton = React.createRef();
     const ner = () => {
         let text = refForbutton.current.value;
-        props.adpost(text);
+        props.ad(text);
+        console.log(1)
     }
     
     return (
@@ -18,7 +17,7 @@ const OurPost = (props) => {
             <div>img-title</div>
             <div>
                 <textarea ref={refForbutton}></textarea>
-                <button type='button'  onClick={ner}>Add Post</button>
+                <button  onClick={ner}>Add Post</button>
 
             </div>
             {posts}

@@ -5,15 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Server from "./redux/server";
 import {addPost} from "./redux/server";
+import { renderEdidth } from "./render";
 
 
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App appServer = {Server} adPost = {addPost} />
-  </React.StrictMode>
-);
+renderEdidth(Server);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

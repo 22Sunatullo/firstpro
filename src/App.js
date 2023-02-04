@@ -7,6 +7,7 @@ import Music from "./component/Music/Music";
 import News from "./component/News/News";
 import Profile from "./component/Profile/Profiles";
 
+
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -16,7 +17,7 @@ const App = (props) => {
         <div className="app-wrap">
           <Routes>
             <Route path="/Profile" element={
-                <Profile net={props.appServer.postData} adpost={props.adpost} />
+                <Profile net={props.appServer.postData} Ser={props.aPost} />
               }
             />
             <Route
