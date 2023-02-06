@@ -4,20 +4,22 @@ import Post from './post/Post';
 
 
 const OurPost = (props) => {
-    let posts = props.post.map(p => (<Post massage={p.massage} numberLi={p.numberLi} />));  
+    let posts = props.post.map(p => (<Post massage={p.massage} numberLi={p.numberLi} />));
     let refForbutton = React.createRef();
     const ner = () => {
-        let text = refForbutton.current.value;
-        props.ad(text);
-        console.log(1)
+        props.ad();
     }
-    
+    const onchangeEng = () => {
+        let text = refForbutton.current.value;
+        props.update(text);
+    }
+
     return (
-     <div>
+        <div>
             <div>img-title</div>
             <div>
-                <textarea ref={refForbutton}></textarea>
-                <button  onClick={ner}>Add Post</button>
+                <textarea ref={refForbutton} onChange={onchangeEng} value={props.nawChane} />
+                <button onClick={ner}>Add Post</button>
 
             </div>
             {posts}

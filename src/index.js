@@ -1,13 +1,21 @@
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Server from "./redux/server";
+import { renderEdidth } from "./render";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import Server from "./redux/server";
-import {addPost} from "./redux/server";
-import { renderEdidth } from "./render";
+import { addPost, update } from "./redux/server";
 
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
+export const renderEdidth = (Server) => {
+  root.render(
+    <React.StrictMode>
+      <App appServer={Server} update={update} aPost={addPost} />
+    </React.StrictMode>
+  );
+};
 
 renderEdidth(Server);
 
