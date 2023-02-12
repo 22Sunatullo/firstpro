@@ -21,8 +21,7 @@ const App = (props) => {
                 <Profile
                   net={props.appServer.profile.postData}
                   nawChane={props.appServer.profile.nawChane}
-                  Ser={props.aPost}
-                  update={props.update}
+                  dispatch={props.dispatch}
                 />
               }
             />
