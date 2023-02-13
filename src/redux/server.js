@@ -1,3 +1,6 @@
+const ADD_Post = 'ADD-POST';
+const uppDatePost = 'UPDATE-NEW-POST';
+
 let store = {
   _Server: {
     profile: {
@@ -33,7 +36,7 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
+    if (action.type === ADD_Post) {
       let newPost = {
         id: 5,
         massage: this._Server.profile.nawChane,
@@ -43,12 +46,23 @@ let store = {
       this._Server.profile.postData.push(newPost);
       this._Server.profile.nawChane = "";
       this._callSubsriber(this._Server);
-    } else if (action.type === 'UPDATE-NEW-POST') {
+    } else if (action.type === uppDatePost) {
       this._Server.profile.nawChane = action.newText;
       this._callSubsriber(this._Server);
     }
   },
 };
+
+export const addPostAction = () =>  ({type: ADD_Post})
+
+
+export const uppDateNewPost = (interes) => {
+
+  return{
+      type: uppDatePost,
+      newText: interes
+  }
+}
 
 window.Server = store;
 

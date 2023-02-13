@@ -27,8 +27,10 @@ const Massage = (props) => {
             <div className={d.massages}>
                 {newDialogData}
             </div>
-            <input type="text" ref={ver} />
-            <button type='button' onClick={func}>Add</button>
+            <div>
+                <input type="text" ref={ver} />
+                <button type='button' onClick={func}>Add</button>
+            </div>
         </div>
 
     );

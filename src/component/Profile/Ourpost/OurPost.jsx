@@ -1,4 +1,5 @@
 import React from 'react';
+import { addPostAction, uppDateNewPost } from '../../../redux/server';
 import s from './OurPost.module.css';
 import Post from './post/Post';
 
@@ -9,11 +10,11 @@ const OurPost = (props) => {
     let posts = props.post.map(p => (<Post massage={p.massage} numberLi={p.numberLi} />));
     let refForbutton = React.createRef();
     const ner = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostAction());
     }
     const onchangeEng = () => {
         const text = refForbutton.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST', newText: text});
+        props.dispatch(uppDateNewPost(text));
     }
 
     return (
