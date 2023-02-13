@@ -29,8 +29,8 @@ const App = (props) => {
               path="/Massage/*"
               element={
                 <Massage
-                  messag={props.appServer.messageData}
-                  dialog={props.appServer.dialogData}
+                  messag={props.appServer.dialogPage.messageData}
+                  dialog={props.appServer.dialogPage.dialogData}
                 />
               }
             />

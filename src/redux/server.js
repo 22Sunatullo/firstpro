@@ -1,6 +1,9 @@
 const ADD_Post = 'ADD-POST';
 const uppDatePost = 'UPDATE-NEW-POST';
 
+const uppDateMessage = 'UPDATE-NEW-Message';
+const ADD_Message = 'ADD-Message';
+
 let store = {
   _Server: {
     profile: {
@@ -10,19 +13,21 @@ let store = {
       ],
       nawChane: "itcamasutra",
     },
-
-    messageData: [
-      { id: 1, name: "Sasha" },
-      { id: 2, name: "Sunatullo" },
-      { id: 3, name: "Umar" },
-      { id: 4, name: "Huseyn" },
-      { id: 5, name: "Kobil" },
-    ],
-    dialogData: [
-      { id: 1, massage: "Hi" },
-      { id: 2, massage: "My name Sunatullo" },
-      { id: 3, massage: "What is your name?" },
-    ],
+    dialogPage: {
+      messageData: [
+        { id: 1, name: "Sasha" },
+        { id: 2, name: "Sunatullo" },
+        { id: 3, name: "Umar" },
+        { id: 4, name: "Huseyn" },
+        { id: 5, name: "Kobil" },
+      ],
+      dialogData: [
+        { id: 1, massage: "Hi" },
+        { id: 2, massage: "My name Sunatullo" },
+        { id: 3, massage: "What is your name?" },
+      ],
+      newText: ''
+    },
   },
   _callSubsriber() {
     console.log("Let");
@@ -47,20 +52,33 @@ let store = {
       this._Server.profile.nawChane = "";
       this._callSubsriber(this._Server);
     } else if (action.type === uppDatePost) {
-      this._Server.profile.nawChane = action.newText;
+      this._Server.profile.nawChane = action.postText;
+      this._callSubsriber(this._Server);
+    } else if(action.type === uppDateMessage){
+      this._Server.dialogPage.newText = action.body; 
+      this._callSubsriber(this._Server);
+    } else if (action.type === ADD_Message){
+      let body = this._Server.dialogPage.newText; 
+      this._Server.dialogPage.newText = ''; 
+      this._Server.dialogPage.dialogData.push({id: 4, massage: body}); 
       this._callSubsriber(this._Server);
     }
   },
 };
 
 export const addPostAction = () =>  ({type: ADD_Post})
-
-
 export const uppDateNewPost = (interes) => {
-
   return{
       type: uppDatePost,
-      newText: interes
+      postText: interes
+  }
+}
+
+export const addMessageAction = () =>  ({type: ADD_Message})
+export const uppDateNewMessage = (interes) => {
+  return{
+      type: uppDateMessage,
+      body: interes
   }
 }
 

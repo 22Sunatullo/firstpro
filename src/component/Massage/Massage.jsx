@@ -9,7 +9,7 @@ const Massage = (props) => {
 
     const ver = React.createRef();
 
-    const func = () =>{
+    const func = () => {
         const newtext = ver.current.value;
         alert(newtext)
     }
@@ -25,11 +25,11 @@ const Massage = (props) => {
                 </ul>
             </div>
             <div className={d.massages}>
-                {newDialogData}
-            </div>
-            <div>
-                <input type="text" ref={ver} />
-                <button type='button' onClick={func}>Add</button>
+                <div> {newDialogData}</div>
+                <div>
+                    <input type="text" placeholder='Send message' ref={ver} />
+                    <button type='button' onClick={func}>Add</button>
+                </div>
             </div>
         </div>
 
