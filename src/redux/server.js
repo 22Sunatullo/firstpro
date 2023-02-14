@@ -40,7 +40,7 @@ let store = {
     this._callSubsriber = observer;
   },
 
-  dispatch(action) {
+  dispatch(action) { 
     if (action.type === ADD_Post) {
       let newPost = {
         id: 5,
