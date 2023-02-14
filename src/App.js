@@ -30,7 +30,8 @@ const App = (props) => {
               element={
                 <Massage
                   messag={props.appServer.dialogPage.messageData}
-                  dialog={props.appServer.dialogPage.dialogData}
+                  dialog={props.appServer.dialogPage}
+                  store = {props.store}
                 />
               }
             />

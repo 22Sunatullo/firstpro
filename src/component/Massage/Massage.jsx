@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { addMessageAction, uppDateNewMessage } from '../../redux/server';
 import Item from './Item/Item';
 import d from './Massage.module.css';
 import Messege from './Messege/Messege';
@@ -9,13 +10,19 @@ const Massage = (props) => {
 
     const ver = React.createRef();
 
+    const massegeBody = (e) =>{
+       let body = e.target.value;
+       props.store.dispatch(uppDateNewMessage(body)); 
+    }
+    
     const func = () => {
-        const newtext = ver.current.value;
-        alert(newtext)
+        props.store.dispatch(addMessageAction()); 
     }
 
     const newMessage = props.messag.map(ren => (<Item name={ren.name} id={ren.id} />));
-    const newDialogData = props.dialog.map(d => (<Messege send={d.massage} />));
+    const newDialogData = props.dialog.dialogData.map(d => (<Messege send={d.massage} />));
+    const newText = props.dialog.newText;
+
 
     return (
         <div className={d.Message}>
@@ -27,7 +34,10 @@ const Massage = (props) => {
             <div className={d.massages}>
                 <div> {newDialogData}</div>
                 <div>
-                    <input type="text" placeholder='Send message' ref={ver} />
+                    <input value={newText} type="text"
+                    onChange={massegeBody}
+                     placeholder='Send message'
+                     ref={ver} />
                     <button type='button' onClick={func}>Add</button>
                 </div>
             </div>

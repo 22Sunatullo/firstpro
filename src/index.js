@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const renderEdidth = (Server) => {
     root.render(
     <React.StrictMode>
-      <App appServer={Server} dispatch={store.dispatch.bind(store)} />
+      <App appServer={Server} dispatch={store.dispatch.bind(store)} store = {store} />
     </React.StrictMode>
   );
 };
