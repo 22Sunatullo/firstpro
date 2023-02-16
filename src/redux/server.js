@@ -1,3 +1,6 @@
+import massegeeReduser from "./massegereduser";
+import profileReduser from "./profilereduser";
+
 const ADD_Post = 'ADD-POST';
 const uppDatePost = 'UPDATE-NEW-POST';
 
@@ -41,46 +44,11 @@ let store = {
   },
 
   dispatch(action) { 
-    if (action.type === ADD_Post) {
-      let newPost = {
-        id: 5,
-        massage: this._Server.profile.nawChane,
-        numberLi: Math.floor(Math.random() * 2000),
-      };
-
-      this._Server.profile.postData.push(newPost);
-      this._Server.profile.nawChane = "";
-      this._callSubsriber(this._Server);
-    } else if (action.type === uppDatePost) {
-      this._Server.profile.nawChane = action.postText;
-      this._callSubsriber(this._Server);
-    } else if(action.type === uppDateMessage){
-      this._Server.dialogPage.newText = action.body; 
-      this._callSubsriber(this._Server);
-    } else if (action.type === ADD_Message){
-      let body = this._Server.dialogPage.newText; 
-      this._Server.dialogPage.newText = ''; 
-      this._Server.dialogPage.dialogData.push({id: 4, massage: body}); 
-      this._callSubsriber(this._Server);
-    }
-  },
+    this._Server.profile = profileReduser(this._Server.profile, action);
+    this._Server.dialogPage = massegeeReduser(this._Server.dialogPage, action);
+    this._callSubsriber(this._Server);
+  }
 };
-
-export const addPostAction = () =>  ({type: ADD_Post})
-export const uppDateNewPost = (interes) => {
-  return{
-      type: uppDatePost,
-      postText: interes
-  }
-}
-
-export const addMessageAction = () =>  ({type: ADD_Message})
-export const uppDateNewMessage = (interes) => {
-  return{
-      type: uppDateMessage,
-      body: interes
-  }
-}
 
 window.Server = store;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { addMessageAction, uppDateNewMessage } from '../../redux/server';
+import { addMessageAction, uppDateNewMessage } from '../../redux/massegereduser';
 import Item from './Item/Item';
 import d from './Massage.module.css';
 import Messege from './Messege/Messege';
