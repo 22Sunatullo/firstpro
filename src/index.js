@@ -16,9 +16,9 @@ const renderEdidth = (Server) => {
   );
 };
 
-renderEdidth(store.getServer());
+renderEdidth(store.getState());
 store.subscriber(() => {
-  let Server = store.getServer();
+  let Server = store.getState();
   renderEdidth(Server);
 });
 // If you want to start measuring performance in your app, pass a function

@@ -19,8 +19,8 @@ const App = (props) => {
               path="/Profile"
               element={
                 <Profile
-                  net={props.appServer.profile.postData}
-                  nawChane={props.appServer.profile.nawChane}
+                  net={props.appServer.postData}
+                  nawChane={props.appServer.nawChane}
                   dispatch={props.dispatch}
                 />
               }
@@ -29,8 +29,8 @@ const App = (props) => {
               path="/Massage/*"
               element={
                 <Massage
-                  messag={props.appServer.dialogPage.messageData}
-                  dialog={props.appServer.dialogPage}
+                  messag={props.appServer.messageData}
+                  dialog={props.appServer}
                   store = {props.store}
                 />
               }

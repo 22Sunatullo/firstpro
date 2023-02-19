@@ -10,13 +10,13 @@ const Massage = (props) => {
 
     const ver = React.createRef();
 
-    const massegeBody = (e) =>{
-       let body = e.target.value;
-       props.store.dispatch(uppDateNewMessage(body)); 
+    const massegeBody = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(uppDateNewMessage(body));
     }
-    
+
     const func = () => {
-        props.store.dispatch(addMessageAction()); 
+        props.store.dispatch(addMessageAction());
     }
 
     const newMessage = props.messag.map(ren => (<Item name={ren.name} id={ren.id} />));
@@ -35,9 +35,9 @@ const Massage = (props) => {
                 <div> {newDialogData}</div>
                 <div>
                     <input value={newText} type="text"
-                    onChange={massegeBody}
-                     placeholder='Send message'
-                     ref={ver} />
+                        onChange={massegeBody}
+                        placeholder='Send message'
+                        ref={ver} />
                     <button type='button' onClick={func}>Add</button>
                 </div>
             </div>
